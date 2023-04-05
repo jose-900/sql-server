@@ -24,90 +24,93 @@
         function hideMenu(){
             navLinks.style.right="-200px";
         }
-        
+
 
     </script>
-
     <!--campus-->
     
     <!--facilidades-->
     <section class="facilities" id="facilities">
-        <h1>E-book Banco de Dados Sql Server   </h1>
-            <p>Aprenda as principais funcionalidades do Banco de Dados mais usado no Mundo da Tecnologia | Gereenciamento | Adminstração | Programação</p>
+        <h1>App Chat Network Friends</h1>
+            <p>Este apk Chat Network Friends apresenta um ambiente seguro onde pode ser criado grupos de discussão ou network especifico sobre um assunto.</p>
          <div class="row">
              <div class="facilities-col">
-                 <img src="Sql.png">
-                 
+                 <img src="appchat.jpg">
                
              </div>
-
             
          </div>
     </section>
     
-      
+    
+    <!---footer-->
     <section class="footer" id="fooder">
-        <div id="smart-button-container">
-            <div style="text-align: center;">
-              <div id="paypal-button-container"></div>
-            </div>
+      <div id="smart-button-container">
+          <div style="text-align: center;">
+            <div id="paypal-button-container"></div>
+          </div>
 
 
-        </div>
-     
-        <div style="padding: 20px;  justify-content: center; align-items: center;" >
-            <h4 style="display: flex; justify-content: center; align-items: center; ">Pix</h4>
-            <img  src="qrcode.png"  width="100" height="100" >
-           
-        </div>
-        
+      </div>
+   
+      <div style="padding: 20px;  justify-content: center; align-items: center;" >
+          <h4 style="display: flex; justify-content: center; align-items: center; ">Pix</h4>
+          <img  src="qrcode.png"  width="100" height="100" >
+         
+      </div>
+      
+      <div class="whats">
+          <a href="https://wa.me/5511986244329" target="_blank" >
+          <h6 style="display: flex; justify-content: center; align-items: center;"></h6>
+          <img src="whats2.jpeg" width="60" alt="Fale conosco" title="Fale conosco" >
+          </a>
+      </div>
+
+      <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=BRL" data-sdk-integration-source="button-factory"></script>
+      <script>
+        function initPayPalButton() {
+          paypal.Buttons({
+            style: {
+              shape: 'pill',
+              color: 'blue',
+              layout: 'vertical',
+              label: 'buynow',
+              
+            },
     
-
-        <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=BRL" data-sdk-integration-source="button-factory"></script>
-        <script>
-          function initPayPalButton() {
-            paypal.Buttons({
-              style: {
-                shape: 'pill',
-                color: 'blue',
-                layout: 'vertical',
-                label: 'buynow',
+            createOrder: function(data, actions) {
+              return actions.order.create({
+                purchase_units: [{"description":"App Chat Android","amount":{"currency_code":"BRL","value":50}}]
+              });
+            },
+    
+            onApprove: function(data, actions) {
+              return actions.order.capture().then(function(orderData) {
                 
-              },
-      
-              createOrder: function(data, actions) {
-                return actions.order.create({
-                  purchase_units: [{"description":"e-book Sql Server","amount":{"currency_code":"BRL","value":50}}]
-                });
-              },
-      
-              onApprove: function(data, actions) {
-                return actions.order.capture().then(function(orderData) {
-                  
-                  // Full available details
-                  console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-      
-                  // Show a success message within this page, e.g.
-                  const element = document.getElementById('paypal-button-container');
-                  element.innerHTML = '';
-                  element.innerHTML = '<h3>Thank you for your payment!</h3>';
-      
-                  // Or go to another URL:  actions.redirect('thank_you.html');
-                  
-                });
-              },
-      
-              onError: function(err) {
-                console.log(err);
-              }
-            }).render('#paypal-button-container');
-          }
-          initPayPalButton();
-        </script>
+                // Full available details
+                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
     
+                // Show a success message within this page, e.g.
+                const element = document.getElementById('paypal-button-container');
+                element.innerHTML = '';
+                element.innerHTML = '<h3>Thank you for your payment!</h3>';
+    
+                // Or go to another URL:  actions.redirect('thank_you.html');
+                
+              });
+            },
+    
+            onError: function(err) {
+              console.log(err);
+            }
+          }).render('#paypal-button-container');
+        }
+        initPayPalButton();
+      </script>
+  
+           
              
-               
-        
-  </section>
+      
+</section>
 </body>
 </html> 
